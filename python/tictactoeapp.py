@@ -19,5 +19,18 @@ def index():
 
 @app.route("/play/<int:row>/<int:col>")
 def play(row,col):
-    return redirect(url_for("index"))
+        turn = session["turn"]
+        session["board"][row][col] = turn
+        
+        if turn == "X":
+            session["turn"] = "Y"
+        elif turn == "Y":
+            session["turn"] = "X"
 
+        return redirect(url_for("index"))
+
+@app.route("/reset")
+def reset():
+        session["board"] = [[None,None,None], [None,None,None], [None,None,None]]
+        session["turn"] = "X"
+        return redirect(url_for("index"))
