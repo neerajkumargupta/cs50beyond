@@ -1,0 +1,25 @@
+-------------------- Auto-Git Log --------------------
+		Thu May 14 2020 16:59:30 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+* django/project1/project1/project1/settings.py
+* django/project1/project1/project1/urls.py
+
+
+Created files:
+* .autogit/logs/log-14-4-2020-16-29-24.txt
+* django/project1/project1/hello/__init__.py
+* django/project1/project1/hello/admin.py
+* django/project1/project1/hello/apps.py
+* django/project1/project1/hello/migrations/__init__.py
+* django/project1/project1/hello/models.py
+* django/project1/project1/hello/tests.py
+* django/project1/project1/hello/urls.py
+* django/project1/project1/hello/views.py
+
+
+Deleted files:
+
+
+Renamed files:
