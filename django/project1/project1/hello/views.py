@@ -7,3 +7,8 @@ def index(request):
 
 def neeraj(request):
     return HttpResponse("Hello, How are you Neeraj!!")
+
+def greet(request , name):
+    return render(request,"hello/greet.html",{
+        "name": name.capitalize()
+    })
