@@ -1,0 +1,11 @@
+h1 {
+    font-family: 'Times New Roman';
+    font-size: 90px;
+    text-align: center;
+    text-shadow: indianred;
+    color: grey;
+}
+
+body{
+    background-color: royalblue;
+}

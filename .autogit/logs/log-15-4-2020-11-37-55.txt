@@ -1,0 +1,20 @@
+-------------------- Auto-Git Log --------------------
+		Fri May 15 2020 11:37:55 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+* django/project1/project1/newyear/views.py
+* django/project1/project1/project1/settings.py
+* django/project1/project1/project1/urls.py
+
+
+Created files:
+* .autogit/logs/log-14-4-2020-21-30-23.txt
+* django/project1/project1/newyear/templates/newyear/index.html
+* django/project1/project1/newyear/urls.py
+
+
+Deleted files:
+
+
+Renamed files:
