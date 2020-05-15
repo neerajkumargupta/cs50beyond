@@ -7,11 +7,11 @@
 </head>
 
 <body>
-    {% if newyear  %}
-        <h1>Happy New Year</h1>
-    {% else %}
-        <h1>Not a Happy New Year</h1>
-    {% endif %}
+    <ul>
+        {% for task in tasks %}
+        <li>{{ task}}</li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>
