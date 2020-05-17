@@ -28,8 +28,8 @@
               <tr>
                 {% for j in range %}
                    <td>
-                       {%if game[i][j] %} 
-                             {{ game[i][j] }}
+                       {%if game|index:i|index:j %} 
+                          {{ game|index:i|index:j }}
                         {% else %}
                              <a href="" >Play {{ turn }} here</a>
                         {% endif %}
