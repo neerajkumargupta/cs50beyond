@@ -15,17 +15,25 @@
   td > a {
       font-size: 18px;
   }
-  function setParameterAndCall(turn, i , j){
-    $.ajax({
-      type: "POST",
-      url: {% url 'play' %},
-      turn: turn, i = i, j = j,
-      success: function(result){
-        alert("Success");
-      }
-    });
-}
+  
+  
   </style>
+  <script>
+
+    function setParameterAndCall(turn, i , j){
+      $.ajax({
+        type: "POST",
+        url: {% url 'tictactoe:play' %},
+        turn: turn, 
+        i: i, 
+        j: j,
+        success: function(result){
+          alert("Success");
+        }
+      });
+    }
+  </script>
+
         <table>
             {% for i in range(3) %}
               <tr>

@@ -20,13 +20,13 @@ def play(request):
             request.session["players"] += [player1,player2]
             request.session["board"] = [[None,None,None], [None,None,None], [None,None,None]]
 
-            return HttpResponseRedirect(reverse("tasks:game"))
+            return HttpResponseRedirect(reverse("tictactoe:game"))
         else:
-             return render(request, "tasks/input.html", {
+             return render(request, "tictactoe/input.html", {
             "form": form
             })
 
-    return render(request, "tasks/input.html", {
+    return render(request, "tictactoe/input.html", {
         "form": newGameForm()
     })
 
