@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "tictactoe/layout.html" %}
 
 {% block body %}
 <style>
@@ -15,6 +15,16 @@
   td > a {
       font-size: 18px;
   }
+  function setParameterAndCall(turn, i , j){
+    $.ajax({
+      type: "POST",
+      url: {% url 'play' %},
+      turn: turn, i = i, j = j,
+      success: function(result){
+        alert("Success");
+      }
+    });
+}
   </style>
         <table>
             {% for i in range(3) %}
@@ -24,14 +34,11 @@
                        {%if game[i][j] %} 
                              {{ game[i][j] }}
                         {% else %}
-                             <a href="{{ url_for('play', row=i,col=j) }}">Play {{ turn }} here</a>
+                             <a onclick="setParameterAndCall(turn, i,j)">Play {{ turn }} here</a>
                         {% endif %}
                   </td>
                 {% endfor%}
-
               </tr>
             {% endfor%}
         </table>
-        <h2><a href="{{ url_for('reset') }}">reset</a></h2>
-        <h2><a href="{{ url_for('load') }}">back</a></h2>
 {% endblock %}

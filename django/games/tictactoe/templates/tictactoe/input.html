@@ -1,6 +1,6 @@
-{% extends "tasks/layout.html" %}
+{% extends "tictactoe/layout.html" %}
 {% block body %}
-   <h1> Add Task</h1>
+   <h1> Add Players</h1>
    <form action="{% url 'tictactoe:play' %}" method='post'>
        {% csrf_token %}
        {{ form }}

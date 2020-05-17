@@ -10,13 +10,6 @@ class newGameForm(forms.Form):
 def load(request):
     return render(request, "tictactoe/input.html")
 
-def index(request):
-    if "players" not in request.session:
-        request.session["players"] = []
-
-    return render(request, "tasks/index.html", {
-        "tasks": request.session["tasks"]
-    })
 
 def play(request):
     if request.method == "POST":
@@ -33,7 +26,7 @@ def play(request):
             "form": form
             })
 
-    return render(request, "tasks/game.html", {
+    return render(request, "tasks/input.html", {
         "form": newGameForm()
     })
 
