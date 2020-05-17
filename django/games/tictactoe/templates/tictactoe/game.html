@@ -20,18 +20,6 @@
   </style>
   <script>
 
-    function setParameterAndCall(turn, i , j){
-      $.ajax({
-        type: "POST",
-        url: {% url 'tictactoe:play' %},
-        turn: turn, 
-        i: i, 
-        j: j,
-        success: function(result){
-          alert("Success");
-        }
-      });
-    }
   </script>
 
         <table>
@@ -42,7 +30,7 @@
                        {%if game[i][j] %} 
                              {{ game[i][j] }}
                         {% else %}
-                             <a onclick="setParameterAndCall(turn, i,j)">Play {{ turn }} here</a>
+                             <a href="" >Play {{ turn }} here</a>
                         {% endif %}
                   </td>
                 {% endfor%}
