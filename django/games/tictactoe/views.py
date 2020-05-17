@@ -46,4 +46,7 @@ def index(request):
 
 def gameboard(request):
         print(f"play current value of in session {request.session.items()}")
-        return render(request, "tictactoe/game.html")
+        return render(request, "tictactoe/game.html",{
+            "range":range(3),
+            "game":request.session["board"]
+        })

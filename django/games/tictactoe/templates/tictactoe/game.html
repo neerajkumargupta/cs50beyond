@@ -21,11 +21,12 @@
   <script>
 
   </script>
-
+        <p>{{ range }}</p>
+        <p>{{ game }}</p>
         <table>
-            {% for i in range(3) %}
+            {% for i in range %}
               <tr>
-                {% for j in range(3) %}
+                {% for j in range %}
                    <td>
                        {%if game[i][j] %} 
                              {{ game[i][j] }}
