@@ -18,20 +18,23 @@ def index(request):
         "tasks": request.session["tasks"]
     })
 
-def add(request):
+def play(request):
     if request.method == "POST":
-        form = newTaskForm(request.POST)
+        form = newGameForm(request.POST)
         if form.is_valid():
-            task = form.cleaned_data["task"]
-            request.session["tasks"] += [task]
-            return HttpResponseRedirect(reverse("tasks:index"))
+            player1 = form.cleaned_data["player1"]
+            player2 = form.cleaned_data["player2"]
+            request.session["players"] += [player1,player2]
+            request.session["board"] = [[None,None,None], [None,None,None], [None,None,None]]
+
+            return HttpResponseRedirect(reverse("tasks:game"))
         else:
-             return render(request, "tasks/add.html", {
+             return render(request, "tasks/input.html", {
             "form": form
             })
 
-    return render(request, "tasks/add.html", {
-        "form": newTaskForm()
+    return render(request, "tasks/game.html", {
+        "form": newGameForm()
     })
 
 

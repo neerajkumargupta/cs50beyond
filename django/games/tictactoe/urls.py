@@ -20,7 +20,7 @@ from . import views
 app_name = "tictactoe"
 
 urlpatterns = [
-    path("index", views.index, name="index"),
+    path("", views.load, name="load"),
     path("play", views.play, name="play")
 
 ]
