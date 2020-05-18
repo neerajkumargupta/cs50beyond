@@ -7,10 +7,14 @@
         {% for i in game %}
         <tr>
         {% for j in i %}
-           <td>{{ j }} :: {{ forloop.counter0 }},{{ count }}</td>
+          {% if j %}
+           <td>{{ j }} :: {{ forloop.parentloop.counter0 }},{{ forloop.counter0 }}</td>
+          {% else %}
+          <a href="{{ url 'tictactoe:play' }}">Play {{ turn }} here</a>
+          {% endif %}
         {% endfor %}
-        {% count += 1 %}
         </tr>
     {% endfor %}
   </table>
 {% endblock %}
+
