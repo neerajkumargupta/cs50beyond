@@ -3,6 +3,7 @@
 
 {% block body %}
         <p>{{ game }}</p>
+        <p>{{ turn }}</p>
         <table>
         {% for i in game %}
         <tr>
@@ -10,7 +11,7 @@
           {% if j %}
            <td>{{ j }} :: {{ forloop.parentloop.counter0 }},{{ forloop.counter0 }}</td>
           {% else %}
-          <a href="{{ url 'tictactoe:play' }}">Play {{ turn }} here</a>
+          <a href="{{ url 'tictactoe:play' x=forloop.parentloop.counter0 y=forloop.counter0}}">Play {{ turn }} here</a>
           {% endif %}
         {% endfor %}
         </tr>

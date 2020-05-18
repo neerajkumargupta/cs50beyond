@@ -22,7 +22,7 @@ app_name = "tictactoe"
 urlpatterns = [
     path("", views.load, name="load"),
     path("index", views.index, name="index"),
-    path("gameboard", views.gameboard, name="gameboard")
-    path("play", views.gameboard, name="gameboard")
+    path("gameboard", views.gameboard, name="gameboard"),
+    path("play", views.play, name="play")
 
 ]

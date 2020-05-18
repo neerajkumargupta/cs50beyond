@@ -27,6 +27,9 @@ def index(request):
             print(f" value for player1 and 2 {player1}  {player2} ### {request} ### {request.session.items()}")
             return HttpResponseRedirect(reverse("tictactoe:gameboard"))
         else:
+             request.session["players"] = []
+             request.session["board"] = [[None,None,None], [None,None,None], [None,None,None]]
+             request.session["turn"] = None
              return render(request, "tictactoe/input.html", {
             "form": form
             })
@@ -38,7 +41,15 @@ def index(request):
 def gameboard(request):
         print(f"play current value of in session {request.session.items()}")
         return render(request, "tictactoe/game.html",{
-            "range":range(3),
-            "count":0,
-            "game":request.session["board"]
+            "game":request.session["board"],
+            "turn":request.session["turn"]
         })
+
+def play(request):
+       
+
+        return render(request, "tictactoe/game.html",{
+            "game":request.session["board"],
+            "turn":request.session["turn"]
+        })
+    
