@@ -4,11 +4,12 @@
 {% block body %}
         <p>{{ game }}</p>
         <table>
-        {% for i in game; index1 in range %}
+        {% for i in game %}
         <tr>
-        {% for j in i ; index2 in range %}
-           <td>{{ j }} :: {{ index1}},{{ index2 }}</td>
+        {% for j in i %}
+           <td>{{ j }} :: {{ forloop.counter0 }},{{ count }}</td>
         {% endfor %}
+        {% count += 1 %}
         </tr>
     {% endfor %}
   </table>

@@ -39,5 +39,6 @@ def gameboard(request):
         print(f"play current value of in session {request.session.items()}")
         return render(request, "tictactoe/game.html",{
             "range":range(3),
+            "count":0,
             "game":request.session["board"]
         })
