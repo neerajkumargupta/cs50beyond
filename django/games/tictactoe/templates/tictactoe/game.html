@@ -1,15 +1,15 @@
+
 {% extends "tictactoe/layout.html" %}
 
 {% block body %}
-        <p>{{ range }}</p>
         <p>{{ game }}</p>
-        {% for i in range %}
         <table>
-        {% for j in i %}
-            <tr>
-                <td>{{ forloop.parentloop.counter }} - {{ forloop.counter }} - {{ i }}</td>
-            </tr>
+        {% for i in game; index1 in range %}
+        <tr>
+        {% for j in i ; index2 in range %}
+           <td>{{ j }} :: {{ index1}},{{ index2 }}</td>
         {% endfor %}
-        </table>
+        </tr>
     {% endfor %}
+  </table>
 {% endblock %}

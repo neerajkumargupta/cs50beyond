@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Mon May 18 2020 12:08:16 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+* django/games/tictactoe/templates/tictactoe/game.html
+* django/games/tictactoe/templates/tictactoe/layout.html
+
+
+Created files:
+* .autogit/logs/log-18-4-2020-11-38-10.txt
+* django/games/tictactoe/static/tictactoe/styles.css
+
+
+Deleted files:
+
+
+Renamed files:

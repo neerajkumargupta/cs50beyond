@@ -8,24 +8,15 @@ class newGameForm(forms.Form):
     player2 = forms.CharField(label="Player2")
 
 def load(request):
-    if "players" not in request.session:
         request.session["players"] = []
-     
-    if "board" not in request.session:
-         request.session["board"] = [[None,None,None], [None,None,None], [None,None,None]]
-
-    return render(request, "tictactoe/input.html", {
+        request.session["board"] = [[None,None,None], [None,None,None], [None,None,None]]
+        return render(request, "tictactoe/input.html", {
         "form": newGameForm()
     })
 
 
 def index(request):
-    if "players" not in request.session:
-        request.session["players"] = []
-     
-    if "board" not in request.session:
-         request.session["board"] = [[None,None,None], [None,None,None], [None,None,None]]
-
+    
     if request.method == "POST":
         form = newGameForm(request.POST)
         if form.is_valid():
