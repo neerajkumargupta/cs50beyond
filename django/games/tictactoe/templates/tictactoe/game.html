@@ -10,9 +10,9 @@
         {% for j in i %}
         <td>  
           {% if j %}
-          {{ j }} :: {{ forloop.parentloop.counter0 }},{{ forloop.counter0 }}
+          {{ j }}
           {% else %}
-          <a href="{% url 'tictactoe:play' %}?x={{forloop.parentloop.counter0|urlencode}}&y={{forloop.counter0|urlencode}}">Play {{ turn }} here</a>
+          <a href="{% url 'tictactoe:play' %}?x={{forloop.parentloop.counter0}}&y={{forloop.counter0}}">Play {{ turn }} here</a>
           {% endif %}
         </td>
         {% endfor %}

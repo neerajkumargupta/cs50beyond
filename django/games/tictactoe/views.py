@@ -22,7 +22,8 @@ def index(request):
         if form.is_valid():
             player1 = form.cleaned_data["player1"]
             player2 = form.cleaned_data["player2"]
-            request.session["players"] += [player1,player2]
+            request.session["player1"] = player1
+            request.session["player2"] = player2
             request.session["turn"] = player1
             print(f" value for player1 and 2 {player1}  {player2} ### {request} ### {request.session.items()}")
             return HttpResponseRedirect(reverse("tictactoe:gameboard"))
@@ -46,8 +47,19 @@ def gameboard(request):
         })
 
 def play(request):
-        x = request.GET.get('x')
-        y = request.GET.get('y')
+        x = int(request.GET.get('x'))
+        y = int(request.GET.get('y'))
+
+        print(f"play current value of in session {request.session.items()}")
+
+        request.session["board"][x][y] = request.session["turn"]
+        print("Player 1  " +  request.session["player1"])
+        print("Player 2  " +  request.session["player2"])
+        if request.session["turn"] == request.session["player1"]:
+            request.session["turn"] = request.session["player2"]
+        elif request.session["turn"] == request.session["player2"]:
+            request.session["turn"] = request.session["player1"]
+       
         print(f"value of x and y in the request {x} :: {y}")
         return render(request, "tictactoe/game.html",{
             "game":request.session["board"],
