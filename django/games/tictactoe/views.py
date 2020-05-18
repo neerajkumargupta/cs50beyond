@@ -46,8 +46,9 @@ def gameboard(request):
         })
 
 def play(request):
-       
-
+        x = request.GET.get('x')
+        y = request.GET.get('y')
+        print(f"value of x and y in the request {x} :: {y}")
         return render(request, "tictactoe/game.html",{
             "game":request.session["board"],
             "turn":request.session["turn"]
